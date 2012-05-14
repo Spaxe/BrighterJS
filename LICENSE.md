@@ -1,5 +1,5 @@
-BrighterJS
-----------
+BrighterJS License
+------------------
 You are free:
 
   * to Share — to copy, distribute and transmit the work

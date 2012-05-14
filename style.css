@@ -1,0 +1,50 @@
+body {
+  font-family: "Averia Libre", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color: #552229;
+  background: #FCE9C1;
+}
+
+a, a:visited, a:active {
+  color: #7279A5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #424975;
+}
+
+header {
+  height: 200px;
+}
+
+header > h1 {
+  color: #A57279;
+  font-size: 300%;
+  text-align: center;
+  padding: 50px 0 0 0;
+}
+
+header > p {
+  color: #A58A81;
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+
+article {
+  line-height: 150%;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+article > p {
+  margin-bottom: 24px;
+}
+
+footer {
+  color: #A57279;
+  font-size: 75%;
+  margin: 24px 0 12px 0;
+  text-align: center;
+}
