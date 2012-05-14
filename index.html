@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brighter</title>
+</head>
+<body>
+  <div id="editor" contentEditable>
+    <p>Mrraa!</p>
+  </div>
+  <div id="source">
+  </div>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="brighter.js"></script>
+  <script type="text/javascript">
+    function escapeHTML(html) {
+      return html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    document.getElementById('editor').addEventListener('keyup', function (event) {
+      document.getElementById('source').innerHTML = escapeHTML(this.innerHTML);
+    });
+  </script>
+</body>
+</html>
