@@ -13,16 +13,16 @@
     <p>Write beautiful prose in your web editor</p>
   </header>
 
-  <article id="content-body" data-brighterjs-editable="content" contentEditable>
-    <p>Have you ever talked to someone who has hit a deer with his car? Even though the situations may differ between individuals—"It was dark and he ran out in front of me" or "I went around the corner and he was just standing there"—no matter what the tale, they will all end with the same sentiment: "I had no idea it could do that much damage."</p>
+  <article id="content-body" data-brighterjs="content">
+    <p>Have you ever talked to someone who has hit a deer with his car? Even though the situations may differ between individuals—"It was dark and he ran out in front of me" or "I went around the corner and he was just standing <em>Stuff</em>there"—no matter what the tale, they will all end with the same sentiment: "I had no idea it could do that much damage."</p>
 
-<p>Deer are dense animals. They're upward of three hundred pounds of muscle and tissue and bone, and they eat healthy and exercise all day. And when you hit one in your car at thirty-five miles an hour, it'll put one heck of a dent in the thing. God forbid you hit one going any faster. I've heard of bumpers ripped off, windshields smashed, and hoods caved in. I have an uncle who swears that he hit a deer once and flipped his car completely over (of course, he's the type who might actually hit an already-dead carcass like a ramp just to see if he could get some air). I've even heard stories of deer flying through the windshields of cars and kicking people to death as they writhed through their own death. It's a thoroughly unpleasant thing, hitting a deer.</p>
+    <p>Deer are dense animals. They're upward of three hundred pounds of muscle and tissue and bone, and they eat healthy and exercise all day. And when you hit one in your car at thirty-five miles an hour, it'll put one heck of a dent in the thing. God forbid you hit one going any faster. I've heard of bumpers ripped off, windshields smashed, and hoods caved in. I have an uncle who swears that he hit a deer once and flipped his car completely over (of course, he's the type who might actually hit an already-dead carcass like a ramp just to see if he could get some air). I've even heard stories of deer flying through the windshields of cars and kicking people to death as they writhed through their own death. It's a thoroughly unpleasant thing, hitting a deer.</p>
 
-<p>And if a deer can do that much damage to a car, can you imagine what it would do to a bicycle? I can tell you the answer to that one: not much at all. But the rider? He gets absolutely nuked.</p>
+    <p>And if a deer can do that much damage to a car, can you imagine what it would do to a bicycle? I can tell you the answer to that one: not much at all. But the rider? He gets absolutely nuked.</p>
 
-<p>I used to be quite an avid mountain biker. I enjoyed racing when I was much younger, and then I got married and complacent and fat. But then sometime around 2004, my wife suggested we get fit by participating in the Balance Bar Adventure Sprint. This is an event where you run over six miles, swim a mile and a half, kayak around a lake, ride your mountain bike across fifteen miles of terrain, and test your mettle in feats of strength and dexterity. It's what would happen if Fear Factor adopted a triathlon format.</p>
+    <p>I used to be quite an avid mountain biker. I enjoyed racing when I was much younger, and then I got married and complacent and fat. But then sometime around 2004, my wife suggested we get fit by participating in the Balance Bar Adventure Sprint. This is an event where you run over six miles, swim a mile and a half, kayak around a lake, ride your mountain bike across fifteen miles of terrain, and test your mettle in feats of strength and dexterity. It's what would happen if Fear Factor adopted a triathlon format.</p>
 
-<p>To get ready, I would drive down to Dauset Trails Nature Center, home to one of the absolute best mountain bike trails in Georgia. I started lightly, going every weekend, and as I got faster and braver and the adrenaline junkie in me began to awaken, I started going every single night. I couldn't get enough of the steep hills, log jumps, ramps, and bridges—all in all, over fifty miles of excitement and adventure. But my favorite part of the entire trail was a short, extremely steep jump run called Pine Mountain.</p>
+    <p>To get ready, I would drive down to Dauset Trails Nature Center, home to one of the absolute best mountain bike trails in Georgia. I started lightly, going every weekend, and as I got faster and braver and the adrenaline junkie in me began to awaken, I started going every single night. I couldn't get enough of the steep hills, log jumps, ramps, and bridges—all in all, over fifty miles of excitement and adventure. But my favorite part of the entire trail was a short, extremely steep jump run called Pine Mountain.</p>
   </article>
 
   <div id="source">
@@ -34,6 +34,7 @@
 
   <!-- Javascript stuff, all the magic -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="jquery.hotkeys.js"></script>
   <script type="text/javascript" src="brighter.js"></script>
   <script type="text/javascript">
     function escapeHTML(html) {

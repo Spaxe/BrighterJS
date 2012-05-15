@@ -1,5 +1,7 @@
 BrighterJS License
 ------------------
+Creative Commons 3.0 Australia.
+
 You are free:
 
   * to Share — to copy, distribute and transmit the work
@@ -32,31 +34,26 @@ to this web page.
 
 jQuery lightweight plugin boilerplate
 -------------------------------------
-Copyright (c) @ajpiano and @addyosmani
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) @ajpiano and @addyosmani and improved by @Xavier_Ho
+under the MIT License.
 
 jQuery project by jQuery Foundation
 -----------------------------------
-Copyright (c) 2011 John Resig, http://jquery.com/
+Copyright (c) 2011 John Resig, http://jquery.com/ under the MIT License.
 
+jQuery Hotkeys Plugin
+---------------------
+Copyright (c) 2010, John Resig,
+Based upon the plugin by Tzury Bar Yochay:
+  http://github.com/tzuryby/hotkeys
+Original idea by:
+  Binny V A, http://www.openjs.com/scripts/events/keyboard_shortcuts/
+Licensed under the MIT License.
+
+Licenses
+========
+The MIT License
+---------------
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including

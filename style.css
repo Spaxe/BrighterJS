@@ -32,19 +32,37 @@ header > p {
 }
 
 article {
-  line-height: 150%;
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
 }
 
-article > p {
+article h1 { font-size: 300%; }
+article h2 { font-size: 240%; }
+article h3 { font-size: 200%; }
+article h4 { font-size: 160%; }
+article h5 { font-size: 140%; }
+article h6 { font-size: 120%; }
+
+article > * {
   margin-bottom: 24px;
 }
+
+article > p {
+  line-height: 150%;
+}
+
+#source {
+  font-family: monospace;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 
 footer {
   color: #A57279;
   font-size: 75%;
-  margin: 24px 0 12px 0;
+  margin: 48px 0 24px 0;
   text-align: center;
 }
