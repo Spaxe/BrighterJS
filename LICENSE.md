@@ -50,6 +50,11 @@ Original idea by:
   Binny V A, http://www.openjs.com/scripts/events/keyboard_shortcuts/
 Licensed under the MIT License.
 
+User Interface Design Framework
+-------------------------------
+Free for commercial use.
+http://www.webalys.com/design-interface-application-framework.php
+
 Licenses
 ========
 The MIT License

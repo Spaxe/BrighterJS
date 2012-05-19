@@ -1,0 +1,102 @@
+.brighterjs-editable:hover:not(:focus) {
+  position: relative;
+}
+
+.brighterjs-editable:hover:not(:focus):after {
+  content: ".";
+  border: 2px dashed grey;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: -10px;
+  padding: 8px;
+}
+
+/* Brighter Context Menu */
+
+#brighter-menu {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0; /* Hack to disregard whitespaces between each item */
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  color: black;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(232, 232, 232, 0.95);
+  user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+#brighter-menu > * {
+  font-size: 16px;
+  transition: background-color 0.2s;
+  -o-transition: background-color 0.1s;
+  -ms-transition: background-color 0.1s;
+  -moz-transition: background-color 0.1s;
+  -webkit-transition: background-color 0.1s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#brighter-menu > li:hover {
+  background-color: rgba(255, 146, 73, 0.99);
+}
+
+/* Common operations */
+#brighter-menu-copy,
+#brighter-menu-cut,
+#brighter-menu-paste {
+  width: 46px;
+  height: 48px;
+  display: inline-block;
+}
+
+#brighter-menu-undo {
+  margin-left: 10px;
+}
+
+#brighter-menu-undo,
+#brighter-menu-redo {
+  width: 46px;
+  height: 48px;
+  display: inline-block;
+}
+
+#brighter-menu-copy > img,
+#brighter-menu-cut > img,
+#brighter-menu-paste > img,
+#brighter-menu-undo > img,
+#brighter-menu-redo > img {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+/* Paragraph styles context menu */
+#brighter-menu-h1,
+#brighter-menu-h2,
+#brighter-menu-h3 {
+  font-family: serif;
+  width: 80px;
+  height: 40px;
+  display: inline-block;
+}
+#brighter-menu-h1 { font-size: 72px; color: #210600; }
+#brighter-menu-h2 { font-size: 54px; color: #311610; }
+#brighter-menu-h3 { font-size: 48px; color: #412620; }
+#brighter-menu-h1 > span {
+  position: relative;
+  top: -20px;
+}
+#brighter-menu-h2 > span {
+  position: relative;
+  top: -5px;
+}
+#brighter-menu-h3 > span {
+  position: relative;
+  top: 0px;
+}

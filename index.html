@@ -3,9 +3,9 @@
 <head>
   <title>BrighterJS: write beautiful prose in your web browser.</title>
   <link href='http://fonts.googleapis.com/css?family=Averia+Libre:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link href='reset.css' rel='stylesheet' type='text/css'>
-  <link href='style.css' rel='stylesheet' type='text/css'>
-  <link href='brighter.js.css' rel='stylesheet' type='text/css'>
+  <link href='stylesheets/reset.css' rel='stylesheet' type='text/css'>
+  <link href='stylesheets/style.css' rel='stylesheet' type='text/css'>
+  <link href='stylesheets/brighter.js.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <header>
@@ -33,9 +33,9 @@
   </footer>
 
   <!-- Javascript stuff, all the magic -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript" src="jquery.hotkeys.js"></script>
-  <script type="text/javascript" src="brighter.js"></script>
+  <script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="scripts/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="scripts/brighter.js"></script>
   <script type="text/javascript">
     function escapeHTML(html) {
       return html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -45,6 +45,6 @@
       document.getElementById('source').innerHTML = escapeHTML(this.innerHTML);
     });
   </script>
-  <script type="text/javascript" src="live.js#html,js,css"></script>
+  <script type="text/javascript" src="scripts/live.js#html,js,css"></script>
 </body>
 </html>

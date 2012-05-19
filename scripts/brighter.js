@@ -7,15 +7,22 @@
   var BrighterJS = function () {
     that = this;
     this.author = "Xavier Ho";
-    this.version = "0.0.1";
-    this.date = "15 May 2012";
+    this.version = "0.0.2";
+    this.date = "19 May 2012";
 
+    this.paragraphs = null; // Working paragraphs.
     this.init();
   };
 
   BrighterJS.prototype = {
     init: function () {
+      that.setupContextMenu();
+    },
 
+    setupContextMenu: function () {
+      $.ajax('templates/brighter-menu.html').success(function (data) {
+        $(document.body).append(data);
+      });
     },
 
     //
@@ -28,8 +35,9 @@
     },
 
     // Changes the current selection to a specific type of elements.
-    makeHeading: function (headingType) {
-      $.each(that.getSelectedParagraphs(), function (i, paragraph) {
+    makeHeading: function (paragraphs, headingType) {
+      $.each(paragraphs, function (i, paragraph) {
+        console.log('Mrraa');
         var $paragraph = $(paragraph);
         var content = $paragraph.html();
         $paragraph.replaceWith($('<' + headingType + '>').html(content));
@@ -67,6 +75,11 @@
         // to the end.  In that case, we give up :[, and return a partial
         // selection.
         var end = that.getParagraph(range.endContainer);
+        // Special case - when the start and the end paragraphs are the same
+        if (paragraph === end) {
+          addParagraph(paragraph);
+          continue;
+        }
         do {
           addParagraph(paragraph);
           paragraph = paragraph.nextElementSibling;
@@ -95,21 +108,41 @@
   // Prototype, I choose you!
   var brighterjs = new BrighterJS();
 
-  //
-  // Hotkeys
-  //
-
-  // Heading 1-6
-  $('[data-brighterjs]').on('keyup.alt_1', function (event) {
-    that.makeHeading('h1');
-    return false;
-  });
-
   // Execute BrighterJS
   $.each($('[data-brighterjs]'), function(i, element) {
     var $element = $(element);
     if ($element.data('brighterjs') === 'content')
       brighterjs.makeEditable($element);
+  });
+
+  // Disable right clicks when in edit mode and display our own.
+  $(document).on('contextmenu.brighter', '[data-brighterjs][contenteditable]', function (event) {
+    if (event.ctrlKey) {
+      $('#brighter-menu')
+        .css('top', event.pageY + 1)
+        .css('left', event.pageX + 1)
+        .show(100, 'swing');
+      that.paragraphs = that.getSelectedParagraphs();
+      return false;
+    }
+  });
+
+  // Hide menu if we clicked on anything
+  $(document).on('click.hidebrightermenu', function (event) {
+    if (event.which !== 3)
+      $('#brighter-menu').hide(100);
+  });
+
+  // Context menu buttons
+  // Headings
+  $(document).on('click.h1', '#brighter-menu-h1', function (event) {
+    that.makeHeading(that.paragraphs, 'h1');
+  });
+  $(document).on('click.h2', '#brighter-menu-h2', function (event) {
+    that.makeHeading(that.paragraphs, 'h2');
+  });
+  $(document).on('click.h3', '#brighter-menu-h3', function (event) {
+    that.makeHeading(that.paragraphs, 'h3');
   });
 
   // Register the plugin to global scope
