@@ -1,1 +1,0 @@
-BrighterJS Github Page
