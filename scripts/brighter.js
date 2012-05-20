@@ -7,8 +7,8 @@
   var BrighterJS = function () {
     that = this;
     this.author = "Xavier Ho";
-    this.version = "0.0.2";
-    this.date = "19 May 2012";
+    this.version = "0.0.3";
+    this.date = "20 May 2012";
 
     this.paragraphs = null; // Working paragraphs.
     this.init();
@@ -35,12 +35,12 @@
     },
 
     // Changes the current selection to a specific type of elements.
-    makeHeading: function (paragraphs, headingType) {
+    makeParagraphType: function (paragraphs, tagName) {
       $.each(paragraphs, function (i, paragraph) {
         console.log('Mrraa');
         var $paragraph = $(paragraph);
         var content = $paragraph.html();
-        $paragraph.replaceWith($('<' + headingType + '>').html(content));
+        $paragraph.replaceWith($('<' + tagName + '>').html(content));
       });
     },
 
@@ -136,13 +136,22 @@
   // Context menu buttons
   // Headings
   $(document).on('click.h1', '#brighter-menu-h1', function (event) {
-    that.makeHeading(that.paragraphs, 'h1');
+    that.makeParagraphType(that.paragraphs, 'h1');
   });
   $(document).on('click.h2', '#brighter-menu-h2', function (event) {
-    that.makeHeading(that.paragraphs, 'h2');
+    that.makeParagraphType(that.paragraphs, 'h2');
   });
   $(document).on('click.h3', '#brighter-menu-h3', function (event) {
-    that.makeHeading(that.paragraphs, 'h3');
+    that.makeParagraphType(that.paragraphs, 'h3');
+  });
+  $(document).on('click.p', '#brighter-menu-p', function (event) {
+    that.makeParagraphType(that.paragraphs, 'p');
+  });
+  $(document).on('click.blockquote', '#brighter-menu-blockquote', function (event) {
+    that.makeParagraphType(that.paragraphs, 'blockquote');
+  });
+  $(document).on('click.pre', '#brighter-menu-pre', function (event) {
+    that.makeParagraphType(that.paragraphs, 'pre');
   });
 
   // Register the plugin to global scope

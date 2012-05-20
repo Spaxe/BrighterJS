@@ -32,7 +32,7 @@
   -webkit-user-select: none;
 }
 
-#brighter-menu > * {
+#brighter-menu > li {
   font-size: 16px;
   transition: background-color 0.2s;
   -o-transition: background-color 0.1s;
@@ -47,56 +47,48 @@
   background-color: rgba(255, 146, 73, 0.99);
 }
 
-/* Common operations */
-#brighter-menu-copy,
-#brighter-menu-cut,
-#brighter-menu-paste {
-  width: 46px;
-  height: 48px;
-  display: inline-block;
+#brighter-menu > li > span {
+  position: relative;
+  line-height: 50px;
+  width: inherit;
+  height: inherit;
+  display: block;
+  color: grey;
+  transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
 }
 
-#brighter-menu-undo {
-  margin-left: 10px;
-}
-
-#brighter-menu-undo,
-#brighter-menu-redo {
-  width: 46px;
-  height: 48px;
-  display: inline-block;
-}
-
-#brighter-menu-copy > img,
-#brighter-menu-cut > img,
-#brighter-menu-paste > img,
-#brighter-menu-undo > img,
-#brighter-menu-redo > img {
-  margin-top: 8px;
-  margin-left: 8px;
+#brighter-menu > li > span:hover {
+  top: -10px;
 }
 
 /* Paragraph styles context menu */
 #brighter-menu-h1,
 #brighter-menu-h2,
-#brighter-menu-h3 {
+#brighter-menu-h3,
+#brighter-menu-p,
+#brighter-menu-blockquote,
+#brighter-menu-pre {
   font-family: serif;
   width: 80px;
   height: 40px;
   display: inline-block;
+  overflow: hidden;
 }
-#brighter-menu-h1 { font-size: 72px; color: #210600; }
-#brighter-menu-h2 { font-size: 54px; color: #311610; }
-#brighter-menu-h3 { font-size: 48px; color: #412620; }
-#brighter-menu-h1 > span {
-  position: relative;
-  top: -20px;
-}
-#brighter-menu-h2 > span {
-  position: relative;
-  top: -5px;
-}
-#brighter-menu-h3 > span {
-  position: relative;
-  top: 0px;
-}
+#brighter-menu-h1 > span { font-size: 72px; }
+#brighter-menu-h1 > span:hover { color: #99004f; }
+#brighter-menu-h2 > span { font-size: 54px; }
+#brighter-menu-h2 > span:hover { color: #004199; }
+#brighter-menu-h3 > span { font-size: 48px; }
+#brighter-menu-h3 > span:hover {color: #049746; }
+
+#brighter-menu-p > span { font-size: 48px; }
+#brighter-menu-p > span:hover { color: #513630 }
+#brighter-menu-blockquote > span { font-size: 48px; text-align: center; }
+#brighter-menu-blockquote > span:hover { color: #414640; }
+#brighter-menu-pre > span { font-size: 48px; font-family: Consolas, monospace; }
+#brighter-menu-pre > span:hover { color: #107126; }
+#brighter-menu-pre > span:hover > span { color: #A12610; }

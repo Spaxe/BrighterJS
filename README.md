@@ -6,6 +6,9 @@ This project is still in an early development stage.
 
 Changelog
 ---------
+20 May 2012, version 0.0.3
+ * Adds paragraph, blockquote, and code blocks.
+
 19 May 2012, version 0.0.2
  * Adds context menu accessible via ctrl + right mouse click.
  * Fixes paragraph selection.
