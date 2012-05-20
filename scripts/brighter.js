@@ -7,9 +7,10 @@
   var BrighterJS = function () {
     that = this;
     this.author = "Xavier Ho";
-    this.version = "0.0.3";
+    this.version = "0.0.4";
     this.date = "20 May 2012";
 
+    this.selection = null; // Working selection;
     this.paragraphs = null; // Working paragraphs.
     this.init();
   };
@@ -35,13 +36,8 @@
     },
 
     // Changes the current selection to a specific type of elements.
-    makeParagraphType: function (paragraphs, tagName) {
-      $.each(paragraphs, function (i, paragraph) {
-        console.log('Mrraa');
-        var $paragraph = $(paragraph);
-        var content = $paragraph.html();
-        $paragraph.replaceWith($('<' + tagName + '>').html(content));
-      });
+    makeParagraphType: function (tagName) {
+      document.execCommand('formatBlock', false, '<' + tagName + '>');
     },
 
     //
@@ -49,8 +45,8 @@
     //
 
     // Return the paragraphs that are covered by one or more selections.
-    getSelectedParagraphs: function () {
-      var selection = window.getSelection();
+    getSelectedParagraphs: function (selection) {
+      that.selection = selection;
       // Be sure the paragraph is valid before we add it.
       var paragraphs = [];
       var addParagraph = function (paragraph) {
@@ -62,8 +58,8 @@
       // Gather all the selections.  They can be broken into sections, so we
       // shall catch'em all.  Ranges can also be collapsed.  In that case, we
       // only have to look for the beginning.
-      for (var i = 0; i < selection.rangeCount; ++i) {
-        var range = selection.getRangeAt(i);
+      for (var i = 0; i < that.selection.rangeCount; ++i) {
+        var range = that.selection.getRangeAt(i);
         // Grab the top most element that contains a paragraph, or a heading
         var paragraph = that.getParagraph(range.startContainer);
         // Special case - when the selection is just a cursor.
@@ -102,6 +98,14 @@
       }
       // If we got here, it means we reached the top level document.
       return null;
+    },
+
+    // Restore last selection based on the states
+    restoreSelection: function (selection) {
+      var windowSelection = window.getSelection();
+      windowSelection.removeAllRanges();
+      for (var i = 0; i < selection.rangeCount; ++i)
+        windowSelection.addRange(selection.getRangeAt(i));
     }
   };
 
@@ -122,7 +126,8 @@
         .css('top', event.pageY + 1)
         .css('left', event.pageX + 1)
         .show(100, 'swing');
-      that.paragraphs = that.getSelectedParagraphs();
+      // Update selection because we will loose focus later.
+      that.paragraphs = that.getSelectedParagraphs(window.getSelection());
       return false;
     }
   });
@@ -135,23 +140,29 @@
 
   // Context menu buttons
   // Headings
-  $(document).on('click.h1', '#brighter-menu-h1', function (event) {
-    that.makeParagraphType(that.paragraphs, 'h1');
+  $(document).on('mousedown.h1', '#brighter-menu-h1', function (event) {
+    that.makeParagraphType('h1');
+    return false;
   });
-  $(document).on('click.h2', '#brighter-menu-h2', function (event) {
-    that.makeParagraphType(that.paragraphs, 'h2');
+  $(document).on('mousedown.h2', '#brighter-menu-h2', function (event) {
+    that.makeParagraphType('h2');
+    return false;
   });
-  $(document).on('click.h3', '#brighter-menu-h3', function (event) {
-    that.makeParagraphType(that.paragraphs, 'h3');
+  $(document).on('mousedown.h3', '#brighter-menu-h3', function (event) {
+    that.makeParagraphType('h3');
+    return false;
   });
-  $(document).on('click.p', '#brighter-menu-p', function (event) {
-    that.makeParagraphType(that.paragraphs, 'p');
+  $(document).on('mousedown.p', '#brighter-menu-p', function (event) {
+    that.makeParagraphType('p');
+    return false;
   });
-  $(document).on('click.blockquote', '#brighter-menu-blockquote', function (event) {
-    that.makeParagraphType(that.paragraphs, 'blockquote');
+  $(document).on('mousedown.blockquote', '#brighter-menu-blockquote', function (event) {
+    that.makeParagraphType('blockquote');
+    return false;
   });
-  $(document).on('click.pre', '#brighter-menu-pre', function (event) {
-    that.makeParagraphType(that.paragraphs, 'pre');
+  $(document).on('mousedown.pre', '#brighter-menu-pre', function (event) {
+    that.makeParagraphType('pre');
+    return false;
   });
 
   // Register the plugin to global scope

@@ -6,6 +6,9 @@ This project is still in an early development stage.
 
 Changelog
 ---------
+20 May 2012, version 0.0.4
+ * Utilises 'formatBlock' so undo would work.
+
 20 May 2012, version 0.0.3
  * Adds paragraph, blockquote, and code blocks.
 
