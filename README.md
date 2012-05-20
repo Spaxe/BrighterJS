@@ -6,6 +6,11 @@ This project is still in an early development stage.
 
 Changelog
 ---------
+20 May 2012, version 0.0.6
+ * Cleaning up codebase.
+ * Changes heading hint text.
+ * Reorganises menu into submenus.
+
 20 May 2012, version 0.0.5
  * Prevents the context menu from going too over right hand side.
 

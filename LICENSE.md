@@ -41,14 +41,10 @@ jQuery project by jQuery Foundation
 -----------------------------------
 Copyright (c) 2011 John Resig, http://jquery.com/ under the MIT License.
 
-jQuery Hotkeys Plugin
----------------------
-Copyright (c) 2010, John Resig,
-Based upon the plugin by Tzury Bar Yochay:
-  http://github.com/tzuryby/hotkeys
-Original idea by:
-  Binny V A, http://www.openjs.com/scripts/events/keyboard_shortcuts/
-Licensed under the MIT License.
+jQuery.event.drag plugin
+------------------------
+Copyright (c) 2010 Three Dub Media - http://threedubmedia.com
+Open Source MIT License - http://threedubmedia.com/code/license
 
 User Interface Design Framework
 -------------------------------

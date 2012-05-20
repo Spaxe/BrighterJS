@@ -20,9 +20,11 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0; /* Hack to disregard whitespaces between each item */
   position: absolute;
+  width: 240px;
   top: 200px;
   left: 200px;
   color: black;
+  overflow: hidden;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
   background-color: rgba(232, 232, 232, 0.95);
   user-select: none;
@@ -32,7 +34,9 @@
   -webkit-user-select: none;
 }
 
-#brighter-menu > li {
+#brighter-menu > menu > li {
+  font-family: serif;
+  display: inline-block;
   font-size: 16px;
   transition: background-color 0.2s;
   -o-transition: background-color 0.1s;
@@ -43,13 +47,13 @@
   cursor: pointer;
 }
 
-#brighter-menu > li:hover {
+#brighter-menu > menu > li:hover {
   background-color: rgba(255, 146, 73, 0.99);
 }
 
-#brighter-menu > li > span {
+#brighter-menu > menu > li > span {
   position: relative;
-  line-height: 50px;
+  line-height: 40px;
   width: inherit;
   height: inherit;
   display: block;
@@ -61,29 +65,55 @@
   -webkit-transition: all 0.2s;
 }
 
-#brighter-menu > li > span:hover {
+#brighter-menu > menu > li > span:hover {
   top: -10px;
 }
+
+#brighter-heading,
+#brighter-paragraphtype,
+#brighter-alignment {
+  width: inherit;
+  overflow: inherit;
+  position: relative;
+}
+#brighter-heading { height: 40px; }
+#brighter-paragraphtype { height: 30px; }
+#brighter-alignment { height: 25px; z-index: 0; }
 
 /* Paragraph styles context menu */
 #brighter-menu-h1,
 #brighter-menu-h2,
 #brighter-menu-h3,
+#brighter-menu-h4,
+#brighter-menu-h5,
+#brighter-menu-h6 {
+  width: 40px;
+}
 #brighter-menu-p,
 #brighter-menu-blockquote,
 #brighter-menu-pre {
-  font-family: serif;
   width: 80px;
-  height: 40px;
-  display: inline-block;
-  overflow: hidden;
 }
+#brighter-menu-leftalign,
+#brighter-menu-centrealign,
+#brighter-menu-rightalign {
+  width: 80px;
+  content: ".";
+  height: inherit;
+}
+
 #brighter-menu-h1 > span { font-size: 72px; }
 #brighter-menu-h1 > span:hover { color: #99004f; }
-#brighter-menu-h2 > span { font-size: 54px; }
+#brighter-menu-h2 > span { font-size: 58px; }
 #brighter-menu-h2 > span:hover { color: #004199; }
 #brighter-menu-h3 > span { font-size: 48px; }
 #brighter-menu-h3 > span:hover {color: #049746; }
+#brighter-menu-h4 > span { font-size: 40px; }
+#brighter-menu-h4 > span:hover {color: #680497; }
+#brighter-menu-h5 > span { font-size: 32px; }
+#brighter-menu-h5 > span:hover {color: #04978e; }
+#brighter-menu-h6 > span { font-size: 28px; }
+#brighter-menu-h6 > span:hover {color: #978e04; }
 
 #brighter-menu-p > span { font-size: 48px; }
 #brighter-menu-p > span:hover { color: #513630 }
