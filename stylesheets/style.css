@@ -52,6 +52,36 @@ article > p {
   line-height: 150%;
 }
 
+article blockquote {
+  line-height: 125%;
+  margin: 50px;
+  position: relative;
+  color: #906A61;
+}
+article blockquote:before {
+  content: "“";
+  font-size: 300%;
+  position: absolute;
+  left: -30px;
+  top: -5px;
+}
+article blockquote:after {
+  content: "„";
+  font-size: 300%;
+  position: absolute;
+  right: -30px;
+  bottom: 10px;
+}
+
+article pre {
+  font-family: Consolas, monospace;
+  font-size: 80%;
+  line-height: 120%;
+  margin-left: 30px;
+  overflow: auto;
+  word-wrap: normal;
+}
+
 #source {
   font-family: monospace;
   width: 80%;
