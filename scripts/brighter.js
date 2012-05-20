@@ -7,7 +7,7 @@
   var BrighterJS = function () {
     that = this;
     this.author = "Xavier Ho";
-    this.version = "0.0.4";
+    this.version = "0.0.5";
     this.date = "20 May 2012";
 
     this.selection = null; // Working selection;
@@ -122,9 +122,15 @@
   // Disable right clicks when in edit mode and display our own.
   $(document).on('contextmenu.brighter', '[data-brighterjs][contenteditable]', function (event) {
     if (event.ctrlKey) {
+      var x = event.pageX + 1;
+      var y = event.pageY + 1;
+      var windowWidth = $(window).outerWidth();
+      // Ensure the context menu doesn't go over.
+      if (x + 200 > windowWidth - 50)
+        x = windowWidth - 250;
       $('#brighter-menu')
-        .css('top', event.pageY + 1)
-        .css('left', event.pageX + 1)
+        .css('top', y)
+        .css('left', x)
         .show(100, 'swing');
       // Update selection because we will loose focus later.
       that.paragraphs = that.getSelectedParagraphs(window.getSelection());

@@ -6,6 +6,9 @@ This project is still in an early development stage.
 
 Changelog
 ---------
+20 May 2012, version 0.0.5
+ * Prevents the context menu from going too over right hand side.
+
 20 May 2012, version 0.0.4
  * Utilises 'formatBlock' so undo would work.
 
