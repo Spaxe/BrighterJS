@@ -1,17 +1,5 @@
-.brighterjs-editable:hover:not(:focus) {
-  position: relative;
-}
-
-.brighterjs-editable:hover:not(:focus):after {
-  content: ".";
-  border: 2px dashed grey;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin: -10px;
-  padding: 8px;
+.brighterjs-editable:focus {
+  outline: none;
 }
 
 /* Brighter Context Menu */
@@ -94,10 +82,12 @@
 #brighter-menu-pre {
   width: 80px;
 }
+#brighter-menu-ul,
+#brighter-menu-ol,
 #brighter-menu-leftalign,
 #brighter-menu-centrealign,
 #brighter-menu-rightalign {
-  width: 80px;
+  width: 48px;
   content: ".";
   height: inherit;
 }
@@ -122,3 +112,8 @@
 #brighter-menu-pre > span { font-size: 48px; font-family: Consolas, monospace; }
 #brighter-menu-pre > span:hover { color: #107126; }
 #brighter-menu-pre > span:hover > span { color: #A12610; }
+
+#brighter-menu-ol > span { font-size: 48px; }
+#brighter-menu-ol > span:hover { color: #513630; }
+#brighter-menu-ul > span { font-size: 48px; }
+#brighter-menu-ul > span:hover { color: #513630; }

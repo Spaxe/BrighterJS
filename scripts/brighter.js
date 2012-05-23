@@ -7,8 +7,8 @@
   var BrighterJS = function () {
     that = this;
     this.author = "Xavier Ho";
-    this.version = "0.0.6";
-    this.date = "20 May 2012";
+    this.version = "0.0.7";
+    this.date = "23 May 2012";
 
     this.init();
   };
@@ -93,6 +93,12 @@
   });
   $(document).on('click.rightalign', '#brighter-menu-rightalign', function (event) {
     document.execCommand('justifyRight', false);
+  });
+  $(document).on('click.ol', '#brighter-menu-ol', function (event) {
+    document.execCommand('insertOrderedList', false);
+  });
+  $(document).on('click.ul', '#brighter-menu-ul', function (event) {
+    document.execCommand('insertUnorderedList', false);
   });
 
   // Register the plugin to global scope

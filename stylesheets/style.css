@@ -48,9 +48,16 @@ article > * {
   margin-bottom: 24px;
 }
 
-article > p {
+article p {
   line-height: 150%;
 }
+
+article ul, article ol {
+  line-height: 125%;
+}
+
+article ul { list-style: disc; }
+article ol { list-style: number; }
 
 article blockquote {
   line-height: 125%;

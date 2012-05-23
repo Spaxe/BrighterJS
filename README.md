@@ -6,6 +6,10 @@ This project is still in an early development stage.
 
 Changelog
 ---------
+23 May 2012, version 0.0.7
+ * Adds bulletin lists and numbered lists.
+ * Fixes styles in test page.
+
 20 May 2012, version 0.0.6
  * Cleaning up codebase.
  * Changes heading hint text.
